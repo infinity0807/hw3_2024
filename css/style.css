@@ -128,7 +128,7 @@ nav a:focus {
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
 *:focus {
-  border: 2px solid blue
+  border: 2px solid 
 }
 
 
@@ -136,19 +136,20 @@ nav a:focus {
 .container{
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  gap: 15px;
+  row-gap: 15px;
 
 }
 
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 
-.container > :first-child {
-  background-image: url('../images/header.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.container  div:first-child {
+    background-image: url('../images/header.jpg');
+    background-attachment: fixed; /* Parallax effect */     
+    background-position: center;  /* Parallax effect */
+    background-repeat: no-repeat; /* Parallax effect */
+    background-size: cover;       /* Parallax effect */
+    height: 200px;                /* Parallax effect */
     grid-column: 1 / -1; 
 }
 
@@ -160,27 +161,32 @@ first div in the grid  and place it in the grid. */
 
       
 .about {
+  display: grid;
   grid-column: 2 / 3;
   grid-row: 2;
       }
       
 .method {
+  display: grid;
   grid-column: 2 / 3;
   grid-row: 3;
       }
       
 .clients {
+  display: grid;
   grid-column: 2 / 3;
   grid-row: 4;
   }
       
 .contact {
+  display: grid;
   grid-column: 2 / 3;
   grid-row: 5;
   }
       
 
 .about-image {
+  display: grid;
   grid-column: 1 / -1;
   max-height: 600px;
   overflow: hidden;
@@ -188,6 +194,7 @@ first div in the grid  and place it in the grid. */
   }
       
 .method-image {
+  display: grid;
   grid-column: 1 / -1;
   max-height: 600px;
   overflow: hidden;
@@ -195,6 +202,7 @@ first div in the grid  and place it in the grid. */
   }
       
 .clients-image {
+  display: grid;
   grid-column: 1 / -1;
   max-height: 600px;
   overflow: hidden;
@@ -202,6 +210,7 @@ first div in the grid  and place it in the grid. */
   }
       
 .contact-image {
+  display: grid;
   grid-column: 1 / -1;
   max-height: 600px;
   
@@ -213,12 +222,22 @@ first div in the grid  and place it in the grid. */
 
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
- .text-block {
-  display: grid;
-  place-items: center;
-  text-align: center;
-  max-height: 500px;
+/* For the text block */
+.text-block {
+  position: relative;
+  margin: 0 auto;
+  vertical-align: middle;
+  border: 10px solid black;
+  text-align: center; 
+  max-height: 400px;
+  padding: 70px 0;
 }
+
+.text-block p h2{
+  
+  vertical-align: middle; /* This centers the content vertically */
+}
+
 
 
 
@@ -228,7 +247,6 @@ first div in the grid  and place it in the grid. */
 
   /* Step 9: Write the selector/rule property to style the nav element */
   nav {
-    /* Align nav to the other side of the window, padding 30px top and bottom */
     display: grid;
     padding: 30px 0;
     text-align: right;
@@ -237,7 +255,6 @@ first div in the grid  and place it in the grid. */
  
   /* Step 10: Write the selector/rule property to update the .container class */
   .container {
-    /* Define the new grid with five columns */
     display: grid;
     grid-template-columns: 50px auto 500px auto 50px;
   }
@@ -245,13 +262,11 @@ first div in the grid  and place it in the grid. */
 
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
   .about, .clients, .method-image, .contact-image {
-    /* Start in the third column and span two columns */
     display: grid;
     grid-column: 3 / span 2;
   }
 
   .method, .contact, .about-image, .clients-image {
-    /* Start in the second column and span two columns */
     display: grid;
     grid-column: 2 / span 2;
   }
@@ -259,11 +274,11 @@ first div in the grid  and place it in the grid. */
 
 
  /* Step 13:Write the selector/rule property to update the .text-block class */
- .text-block {
-  /* Set a maximum height and ensure content is reachable */
-  display: grid;
-  max-height: 250px;
-  overflow: auto;
-}
+  .text-block {
+   display: grid;
+   max-height: 250px;
+   overflow: auto;
+  
+ }
 
 }
